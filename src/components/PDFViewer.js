@@ -1,6 +1,7 @@
-import { Badge, Button, ButtonGroup, Col, Container, Row } from "react-bootstrap";
+import { Button, ButtonGroup, Col, Container, Row } from "react-bootstrap";
 import { Component } from "react";
-import { Document, Outline, Page, pdfjs } from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf";
+import Loader from './Loader';
 
 pdfjs.GlobalWorkerOptions.workerSrc = "pdf.worker.min.js";
 
@@ -60,8 +61,8 @@ class PDFViewer extends Component {
 						</Col>
 					</Row>
 				</Container>
-				<Document file={this.props.file} onLoadSuccess={this.onDocumentLoadSuccess} className="shadow">
-					<Page pageNumber={pageNumber} renderAnnotationLayer={false} renderTextLayer={false} className="bg-secondary" />
+				<Document file={this.props.file} onLoadSuccess={this.onDocumentLoadSuccess} loading={<Loader />} className="shadow">
+					<Page pageNumber={pageNumber} loading={<Loader />} renderAnnotationLayer={false} renderTextLayer={false} className="bg-secondary" />
 				</Document>
 			</>
 		);
