@@ -7,13 +7,13 @@ import Footer from "../components/Footer";
 class Layout extends Component {
 	render() {
 		return (
-			<>
+			<div className="d-flex flex-column min-vh-100">
 				<Header />
 				<Container className="py-4">
 					<Outlet />
 				</Container>
 				<Footer />
-			</>
+			</div>
 		);
 	}
 }
