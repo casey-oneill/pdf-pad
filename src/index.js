@@ -12,7 +12,7 @@ import Edit from './pages/Edit';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	<BrowserRouter>
+	<BrowserRouter basename="pdf-pad">
 		<Routes>
 			<Route path="/" element={<Layout />}>
 				<Route path="/" element={<Home />} />

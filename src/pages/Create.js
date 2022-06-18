@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Card } from "react-bootstrap";
 
 class Create extends Component {
 	render() {

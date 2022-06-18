@@ -13,13 +13,11 @@ class Home extends Component {
 				<div className="home-content">
 					<Container fluid>
 						<Row>
-							<Col className="px-0">
-								<Stack gap={4}>
-									<h1 className="display-6">Get started</h1>
-									<Button variant="outline-primary" className="w-25" as={Link} to="create">Create PDF</Button>
-									<Button variant="outline-primary" className="w-25" as={Link} to="edit">Edit PDF</Button>
-								</Stack>
-							</Col>
+							<Stack gap={4}>
+								<h1 className="display-6">Get started</h1>
+								<Button variant="outline-primary" className="w-25" as={Link} to="create">Create PDF</Button>
+								<Button variant="outline-primary" className="w-25" as={Link} to="edit">Edit PDF</Button>
+							</Stack>
 						</Row>
 					</Container>
 				</div>
