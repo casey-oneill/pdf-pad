@@ -61,8 +61,8 @@ class PDFViewer extends Component {
 						</Col>
 					</Row>
 				</Container>
-				<Document file={this.props.file} onLoadSuccess={this.onDocumentLoadSuccess} loading={<Loader />} className="shadow">
-					<Page pageNumber={pageNumber} loading={<Loader />} renderAnnotationLayer={false} renderTextLayer={false} className="bg-secondary" />
+				<Document file={this.props.file} onLoadSuccess={this.onDocumentLoadSuccess} loading={<Loader />}>
+					<Page pageNumber={pageNumber} loading={<Loader />} renderAnnotationLayer={false} renderTextLayer={false} className="bg-secondary p-3" />
 				</Document>
 			</>
 		);
