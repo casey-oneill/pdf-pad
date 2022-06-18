@@ -6,7 +6,7 @@ class Home extends Component {
 	render() {
 		return (
 			<div className="home">
-				<div className="home-title text-center">
+				<div className="home-title text-center py-5">
 					<h1 className="display-4">PDF-PAD</h1>
 					<p className="text-muted lead">Create and modify PDF documents online.</p>
 				</div>
