@@ -1,9 +1,10 @@
 import { Component } from "react";
+import { Container } from "react-bootstrap";
 
 class Help extends Component {
 	render() {
 		return (
-			<div className="help">
+			<Container className="help py-5">
 				<h2>Need Help?</h2>
 				<p>
 					Your question may already be answered. Please take a moment to look through our <a href="https://github.com/casey-oneill/pdf-pad/issues">GitHub issues</a> issues before contacting us.
@@ -12,7 +13,7 @@ class Help extends Component {
 				<p>
 					We prefer using GitHub issues to answer questions, track bugs, and request new features. Please do not contact the authors of this project directly.
 				</p>
-			</div>
+			</Container>
 		);
 	}
 }
