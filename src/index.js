@@ -9,6 +9,7 @@ import Help from './pages/Help';
 import Home from './pages/Home';
 import Create from './pages/Create';
 import Edit from './pages/Edit';
+import ImageConverter from './components/pdf-tools/ImageConverter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +18,9 @@ root.render(
 			<Route path="/" element={<Layout />}>
 				<Route path="/" element={<Home />} />
 				<Route path="help" element={<Help />} />
-				<Route path="create" element={<Create />} />
+				<Route path="create" element={<Create />}>
+					<Route path="image-converter" element={<ImageConverter />} />
+				</Route>
 				<Route path="edit" element={<Edit />} />
 			</Route>
 		</Routes>

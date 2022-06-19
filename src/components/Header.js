@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { solid, brands } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { Component } from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ class Header extends Component {
 					</Navbar.Brand>
 					<Nav>
 						<Nav.Link as={Link} to="help">Help</Nav.Link>
-						<Nav.Link href="https://github.com/casey-oneill/pdf-pad"><FontAwesomeIcon icon={brands("github")} /> GitHub</Nav.Link>
+						<Nav.Link href="https://github.com/casey-oneill/pdf-pad">GitHub</Nav.Link>
 					</Nav>
 				</Container>
 			</Navbar>

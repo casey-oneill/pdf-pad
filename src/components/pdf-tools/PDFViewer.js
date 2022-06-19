@@ -1,7 +1,7 @@
 import { Button, ButtonGroup, Col, Container, Row } from "react-bootstrap";
 import { Component } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
-import Loader from './Loader';
+import Loader from '../Loader';
 
 pdfjs.GlobalWorkerOptions.workerSrc = "pdf.worker.min.js";
 

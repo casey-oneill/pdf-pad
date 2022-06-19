@@ -13,34 +13,7 @@ class Edit extends Component {
 					<p className="text-muted lead">Make changes to an existing PDF document.</p>
 				</div>
 				<div className="edit-content">
-					<Container fluid className="py-5">
-						<Row>
-							<Col>
-								<Card className="text-center">
-									<Card.Body as={Button} variant="outline-primary">
-										<Card.Title><FontAwesomeIcon icon={solid("repeat")} /></Card.Title>
-										<Card.Text>Images to PDF</Card.Text>
-									</Card.Body>
-								</Card>
-							</Col>
-							<Col>
-								<Card className="text-center">
-									<Card.Body as={Button} variant="outline-primary">
-										<Card.Title><FontAwesomeIcon icon={solid("repeat")} /></Card.Title>
-										<Card.Text>Images to PDF</Card.Text>
-									</Card.Body>
-								</Card>
-							</Col>
-							<Col>
-								<Card className="text-center">
-									<Card.Body as={Button} variant="outline-primary">
-										<Card.Title><FontAwesomeIcon icon={solid("repeat")} /></Card.Title>
-										<Card.Text>Images to PDF</Card.Text>
-									</Card.Body>
-								</Card>
-							</Col>
-						</Row>
-					</Container>
+
 				</div>
 			</div>
 		);
