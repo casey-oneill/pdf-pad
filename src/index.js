@@ -19,7 +19,8 @@ root.render(
 				<Route path="/" element={<Home />} />
 				<Route path="help" element={<Help />} />
 				<Route path="create" element={<Create />}>
-					<Route path="image-converter" element={<ImageConverter />} />
+					<Route path="png-converter" element={<ImageConverter imageType="png" />} />
+					<Route path="jpg-converter" element={<ImageConverter imageType="jpg" />} />
 				</Route>
 				<Route path="edit" element={<Edit />} />
 			</Route>

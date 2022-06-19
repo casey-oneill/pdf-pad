@@ -4,6 +4,8 @@ import { Button, Container, Form, Image, Row } from "react-bootstrap";
 import { PDFDocument } from "pdf-lib";
 import PDFViewer from "./PDFViewer";
 import Loader from "../Loader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 class ImageConverter extends Component {
 
@@ -16,12 +18,30 @@ class ImageConverter extends Component {
 		}
 	}
 
+	componentDidUpdate(prevProps) {
+		if (prevProps.imageType !== this.props.imageType) {
+			// reset state
+			this.setState({
+				imageUrl: null,
+				pdfBytes: null,
+				isLoading: false,
+				error: null,
+			})
+		}
+	}
+
 	async convertImage(imageUrl) {
 		const imageBytes = await fetch(imageUrl).then((res) => res.arrayBuffer());
 
 		const pdfDoc = await PDFDocument.create();
 
-		const image = await pdfDoc.embedPng(imageBytes);
+		let image;
+		if (this.props.imageType === "png") {
+			image = await pdfDoc.embedPng(imageBytes);
+		} else if (this.props.imageType === "jpg") {
+			image = await pdfDoc.embedJpg(imageBytes);
+		}
+
 		const imageDims = image.scale(0.5);
 
 		const page = pdfDoc.addPage();
@@ -60,21 +80,20 @@ class ImageConverter extends Component {
 
 	render() {
 		const { imageUrl, pdfBytes, isLoading } = this.state;
+		const imageTypeText = String(this.props.imageType).toUpperCase();
 		return (
-			<Container fluid className="py-3">
-				<Row>
-					<h1 className="display-6">Convert Image to PDF</h1>
-				</Row>
-				{imageUrl === null ? null : <Image src={imageUrl} thumbnail />}
+			<Container fluid className="py-5">
+				<h1 className="display-6">Convert {imageTypeText} to PDF</h1>
 				<Row>
 					<Form.Group controlId="formFile" className="mb-3" onChange={this.handleChange}>
-						<Form.Label>Select image file to convert to PDF</Form.Label>
+						<Form.Label>Select {imageTypeText} file to convert to PDF</Form.Label>
 						<Form.Control type="file" />
 					</Form.Group>
+					{imageUrl === null ? null : <Image src={imageUrl} thumbnail />}
 				</Row>
-				<Button variant="primary" disabled={imageUrl === null} onClick={this.handleButtonPress}>Convert</Button>
+				<Button variant="primary" disabled={imageUrl === null} onClick={this.handleButtonPress}><FontAwesomeIcon icon={solid("repeat")} /> Convert</Button>
 				{isLoading ? <Loader /> : null}
-				{pdfBytes === null ? null : <a href={`data:application/pdf;base64,${pdfBytes}`} download="file.pdf"><Button variant="primary">Download</Button></a>}
+				{pdfBytes === null ? null : <a href={`data:application/pdf;base64,${pdfBytes}`} download="file.pdf"><Button variant="primary"><FontAwesomeIcon icon={solid("download")} /> Download</Button></a>}
 			</Container>
 		);
 	}

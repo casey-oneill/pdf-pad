@@ -6,12 +6,12 @@ class Home extends Component {
 	render() {
 		return (
 			<div className="home">
-				<div className="home-title text-center py-5">
+				<div className="home-title bg-light text-center py-5">
 					<h1 className="display-4">PDF-PAD</h1>
 					<p className="text-muted lead">Create and modify PDF documents online.</p>
 				</div>
-				<div className="home-content">
-					<Container fluid>
+				<div className="home-content py-5">
+					<Container>
 						<Row>
 							<Col xs="6">
 								<Stack gap={4}>

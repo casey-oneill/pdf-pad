@@ -9,9 +9,7 @@ class Layout extends Component {
 		return (
 			<div className="d-flex flex-column min-vh-100">
 				<Header />
-				<Container className="py-4">
-					<Outlet />
-				</Container>
+				<Outlet />
 				<Footer />
 			</div>
 		);
