@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Button, Col, Container, Row, Stack } from "react-bootstrap";
+import { Button, Col, Container, ListGroup, ListGroupItem, Row, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 class Home extends Component {
@@ -13,11 +13,24 @@ class Home extends Component {
 				<div className="home-content">
 					<Container fluid>
 						<Row>
-							<Stack gap={4}>
-								<h1 className="display-6">Get started</h1>
-								<Button variant="outline-primary" className="w-25" as={Link} to="create">Create PDF</Button>
-								<Button variant="outline-primary" className="w-25" as={Link} to="edit">Edit PDF</Button>
-							</Stack>
+							<Col xs="6">
+								<Stack gap={4}>
+									<h1 className="display-6">Get started</h1>
+									<Button variant="outline-primary" className="w-25" as={Link} to="create">Create PDF</Button>
+									<Button variant="outline-primary" className="w-25" as={Link} to="edit">Edit PDF</Button>
+								</Stack>
+							</Col>
+						</Row>
+						<Row className="justify-content-end pt-5">
+							<Col xs="6">
+								<h1 className="display-6">Features</h1>
+								<p>A free and open source web application powered by the <a href="https://pdf-lib.js.org">PDF-LIB</a> JavaScript PDF library.</p>
+								<ListGroup className="list-group-flush">
+									<ListGroupItem className="lead px-0">Create and Modify</ListGroupItem>
+									<ListGroupItem className="lead px-0">Split and Merge</ListGroupItem>
+									<ListGroupItem className="lead px-0">Fill Forms</ListGroupItem>
+								</ListGroup>
+							</Col>
 						</Row>
 					</Container>
 				</div>

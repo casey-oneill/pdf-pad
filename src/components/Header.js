@@ -14,7 +14,7 @@ class Header extends Component {
 						PDF-PAD
 					</Navbar.Brand>
 					<Nav>
-						<Nav.Link as={Link} to="help">Help</Nav.Link>
+						<Nav.Link as={Link} to="/help">Help</Nav.Link>
 						<Nav.Link href="https://github.com/casey-oneill/pdf-pad">GitHub</Nav.Link>
 					</Nav>
 				</Container>
