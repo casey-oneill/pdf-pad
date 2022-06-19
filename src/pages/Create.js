@@ -15,7 +15,7 @@ class Create extends Component {
 						<p className="text-muted lead">Create a new PDF document from existing files.</p>
 					</div>
 					<div className="create-content">
-						<Container fluid className="py-3">
+						<Container className="py-3">
 							<Row className="justify-content-center">
 								<Col xs="4">
 									<Card className="text-center">
@@ -33,6 +33,16 @@ class Create extends Component {
 											<Card.Body>
 												<Card.Title><FontAwesomeIcon icon={solid("repeat")} /></Card.Title>
 												<Card.Text>JPG to PDF</Card.Text>
+											</Card.Body>
+										</Button>
+									</Card>
+								</Col>
+								<Col xs="4">
+									<Card className="text-center">
+										<Button as={Link} variant="outline-primary" to="/create/pdf-merger">
+											<Card.Body>
+												<Card.Title><FontAwesomeIcon icon={solid("repeat")} /></Card.Title>
+												<Card.Text>Merge PDFs</Card.Text>
 											</Card.Body>
 										</Button>
 									</Card>

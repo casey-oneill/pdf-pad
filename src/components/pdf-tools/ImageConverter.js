@@ -1,8 +1,6 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
 import { Button, Container, Form, Image, Row } from "react-bootstrap";
 import { PDFDocument } from "pdf-lib";
-import PDFViewer from "./PDFViewer";
 import Loader from "../Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";

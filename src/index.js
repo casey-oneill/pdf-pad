@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Create from './pages/Create';
 import Edit from './pages/Edit';
 import ImageConverter from './components/pdf-tools/ImageConverter';
+import PDFMerger from './components/pdf-tools/PDFMerger';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
 				<Route path="create" element={<Create />}>
 					<Route path="png-converter" element={<ImageConverter imageType="png" />} />
 					<Route path="jpg-converter" element={<ImageConverter imageType="jpg" />} />
+					<Route path="pdf-merger" element={<PDFMerger />} />
 				</Route>
 				<Route path="edit" element={<Edit />} />
 			</Route>
