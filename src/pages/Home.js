@@ -26,9 +26,9 @@ class Home extends Component {
 								<h1 className="display-6">Features</h1>
 								<p>A free and open source web application powered by the <a href="https://pdf-lib.js.org">PDF-LIB</a> JavaScript PDF library.</p>
 								<ListGroup className="list-group-flush">
-									<ListGroupItem className="lead px-0">Create and Modify</ListGroupItem>
-									<ListGroupItem className="lead px-0">Split and Merge</ListGroupItem>
-									<ListGroupItem className="lead px-0">Fill Forms</ListGroupItem>
+									<ListGroupItem className="px-0">Create and Modify</ListGroupItem>
+									<ListGroupItem className="px-0">Split and Merge</ListGroupItem>
+									<ListGroupItem className="px-0">Fill Forms</ListGroupItem>
 								</ListGroup>
 							</Col>
 						</Row>

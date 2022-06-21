@@ -1,10 +1,10 @@
 import { Component } from "react";
-import { Button, Container, Form, Image, Row, Table } from "react-bootstrap";
+import { Button, Container, Form, Row, Table } from "react-bootstrap";
 import { PDFDocument } from "pdf-lib";
-import PDFViewer from "./PDFViewer";
 import Loader from "../Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import PDFViewer from "./PDFViewer";
 
 class PDFMerger extends Component {
 
@@ -12,7 +12,6 @@ class PDFMerger extends Component {
 		super(props);
 		this.state = {
 			files: [],
-			numberFiles: 1,
 			pdfBytes: null,
 			isLoading: false,
 		}
@@ -98,7 +97,7 @@ class PDFMerger extends Component {
 	}
 
 	render() {
-		const { files, numberFiles, pdfBytes, isLoading } = this.state;
+		const { files, pdfBytes, isLoading } = this.state;
 		return (
 			<Container fluid className="py-5">
 				<h1 className="display-6">Merge PDF files</h1>
@@ -123,7 +122,7 @@ class PDFMerger extends Component {
 				</Row>
 				<Button variant="primary" disabled={files.length === 0} onClick={this.handleButtonPress}><FontAwesomeIcon icon={solid("repeat")} /> Convert</Button>
 				{isLoading ? <Loader /> : null}
-				{pdfBytes === null ? null : <a href={`data:application/pdf;base64,${pdfBytes}`} download="file.pdf"><Button variant="primary"><FontAwesomeIcon icon={solid("download")} /> Download</Button></a>}
+				<PDFViewer pdfBytes={pdfBytes} />
 			</Container>
 		);
 	}

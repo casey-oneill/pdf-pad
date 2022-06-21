@@ -4,6 +4,7 @@ import { PDFDocument } from "pdf-lib";
 import Loader from "../Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import PDFViewer from "./PDFViewer";
 
 class ImageConverter extends Component {
 
@@ -91,7 +92,7 @@ class ImageConverter extends Component {
 				</Row>
 				<Button variant="primary" disabled={imageUrl === null} onClick={this.handleButtonPress}><FontAwesomeIcon icon={solid("repeat")} /> Convert</Button>
 				{isLoading ? <Loader /> : null}
-				{pdfBytes === null ? null : <a href={`data:application/pdf;base64,${pdfBytes}`} download="file.pdf"><Button variant="primary"><FontAwesomeIcon icon={solid("download")} /> Download</Button></a>}
+				<PDFViewer pdfBytes={pdfBytes} />
 			</Container>
 		);
 	}
